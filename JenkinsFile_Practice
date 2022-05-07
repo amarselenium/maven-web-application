@@ -36,7 +36,7 @@ sendslacknotifications('STARTED')
     //Get the code from github repository
 stage('checkoutcode')
 {
-git branch: 'development', credentialsId: '04a16d3e-8577-4688-bd33-b66cd0537993', url: 'https://github.com/amarselenium/maven-web-applications.git'
+git branch: 'development', credentialsId: '04a16d3e-8577-4688-bd33-b66cd0537993', url: 'https://github.com/amarselenium/maven-web-application.git'
 }
 
 //Building the code using maven build
