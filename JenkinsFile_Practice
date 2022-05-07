@@ -29,6 +29,9 @@ node{
  echo "job name is :${env.JOB_NAME}"
  echo "Node name is : ${env.NODE_NAME}"
 def MavenHome = tool name: 'maven3.8.4'
+
+
+try{
     //Get the code from github repository
 stage('checkoutcode')
 {
@@ -63,4 +66,13 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
 }
 
 }*/
-}
+}}
+catch(e)
+{
+    // If there was an exception thrown, the build failed
+    currentBuild.result = "FAILED"
+    throw e
+  } finally {
+    // Success or failure, always send notifications
+    sendslacknotifications(currentBuild.result)
+  }
