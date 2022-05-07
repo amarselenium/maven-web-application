@@ -66,7 +66,7 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
 }
 
 }*/
-}}
+}
 catch(e)
 {
     // If there was an exception thrown, the build failed
@@ -76,3 +76,4 @@ catch(e)
     // Success or failure, always send notifications
     sendslacknotifications(currentBuild.result)
   }
+}
