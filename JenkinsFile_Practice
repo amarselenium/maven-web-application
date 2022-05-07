@@ -14,7 +14,7 @@ stage('Build')
 sh "${MavenHome}/bin/mvn clean package"
 }
 
-//Execute sonarqube report
+/*//Execute sonarqube report
 stage('ExecuteSonarQubeReport')
 {
 sh "${MavenHome}/bin/mvn sonar:sonar"
@@ -35,5 +35,5 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
     
 }
 
-}
+}*/
 }
