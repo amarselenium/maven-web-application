@@ -25,7 +25,7 @@ def sendslacknotifications(String buildStatus = 'STARTED') {
 }
 
 
-node(Flipkart-Node){
+node('Flipkart-Node'){
  echo "job name is :${env.JOB_NAME}"
  echo "Node name is : ${env.NODE_NAME}"
 def MavenHome = tool name: 'maven3.8.4'
